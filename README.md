@@ -1,6 +1,9 @@
 ## Hi there 👋
 
 [![Luca's GitHub stats](https://github-readme-stats.vercel.app/api?username=Lucastirbat)](https://github.com/Lucastirbat/github-readme-stats)
+
+![Metrics](https://github.com/Lucastirbat/Lucastirbat/blob/generated/metrics.svg)
+
 <!--
 **Lucastirbat/Lucastirbat** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
