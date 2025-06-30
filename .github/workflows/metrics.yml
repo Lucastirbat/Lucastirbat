@@ -1,2 +1,21 @@
-- name: Metrics embed
-  uses: lowlighter/metrics@v3.34
+name: Metrics embed
+
+on:
+  schedule: [{cron: "0 * * * *"}] # every hour
+  workflow_dispatch:             # allow manual trigger
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Metrics
+        uses: lowlighter/metrics@v3.34
+        with:
+          user: Lucastirbat
+          config_timezone: Europe/Bucharest
+          plugin_isocalendar: yes
+          plugin_languages: yes
+          plugin_followup: yes
+          plugin_lines: yes
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
