@@ -2,34 +2,20 @@ name: Metrics embed
 
 on:
   schedule:
-    - cron: "0 * * * *"  # runs every hour
+    - cron: "0 0 * * *"  # every day at midnight
   workflow_dispatch:
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate metrics
-        uses: lowlighter/metrics@v3.34
+      - name: Generate GitHub metrics
+        uses: lowlighter/metrics@latest
         with:
           user: Lucastirbat
-          config_output: metrics.svg
           config_timezone: Europe/Bucharest
-          plugin_isocalendar: yes
+          config_output: metrics.svg
           plugin_languages: yes
-          plugin_followup: yes
-          plugin_lines: yes
+          plugin_isocalendar: yes
         env:
           METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
-
-      - name: Push to metrics branch
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git clone --depth=1 --branch=metrics https://github.com/${{ github.repository }} metrics-output || git clone --depth=1 https://github.com/${{ github.repository }} metrics-output
-          mv metrics.svg metrics-output/metrics.svg
-          cd metrics-output
-          git checkout -B metrics
-          git add metrics.svg
-          git commit -m "update metrics" || echo "No changes to commit"
-          git push origin metrics
