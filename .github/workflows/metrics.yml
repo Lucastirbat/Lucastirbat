@@ -12,10 +12,12 @@ jobs:
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
+          # Your personal token
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # User and config options
           user: Lucastirbat
           config_timezone: Europe/Bucharest
           config_output: metrics.svg
           plugin_languages: yes
           plugin_isocalendar: yes
-        env:
-          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
