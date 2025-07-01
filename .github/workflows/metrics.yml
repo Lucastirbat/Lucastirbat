@@ -2,8 +2,12 @@ name: Metrics embed
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # every day at midnight
+    - cron: "0 0 * * *"
   workflow_dispatch:
+
+# Add this permissions block
+permissions:
+  contents: write
 
 jobs:
   github-metrics:
@@ -12,10 +16,7 @@ jobs:
       - name: Generate GitHub metrics
         uses: lowlighter/metrics@latest
         with:
-          # Your personal token
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # User and config options
           user: Lucastirbat
           config_timezone: Europe/Bucharest
           config_output: metrics.svg
