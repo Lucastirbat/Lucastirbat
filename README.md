@@ -1,6 +1,6 @@
 ## Hi there 👋
 
-![My GitHub Metrics](metrics.svg)
+![My GitHub Metrics](github-metrics.svg)
 
 <!--
 **Lucastirbat/Lucastirbat** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
