@@ -1,0 +1,12 @@
+# Deep Agents framework from LangChain
+deepagents>=0.1.0
+
+# Core dependencies (included with deepagents but specified for clarity)
+langgraph>=0.3.0
+langchain>=1.0.0
+langchain-openai>=1.0.0
+langchain-anthropic>=1.0.0
+
+# CLI and utilities
+python-dotenv>=1.0.0
+rich>=13.0.0
